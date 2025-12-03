@@ -42,6 +42,7 @@ export default function ConfirmPage() {
 
   const handleConfirm = async () => {
     const ok = await confirm("정말 삭제하시겠습니까?");
+    console.log(ok, "okk");
     setLastResult(ok ? "확인 선택됨" : "취소 선택됨");
   };
 

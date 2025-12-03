@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { AvatarWrapper, AvatarImg } from "./Avatar.styles";
 import type { AvatarProps } from "./Avatar.types";
 

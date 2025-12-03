@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useRef } from "react";
+import { useEffect, useId, useRef } from "react";
 import { Wrapper, Label, StyledTextarea, Helper } from "./Textarea.styles";
 import type { TextareaProps } from "./Textarea.types";
 

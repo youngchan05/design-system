@@ -1,4 +1,3 @@
-import React from "react";
 import { TagWrapper, RemoveButton } from "./Tag.styles";
 import type { TagProps } from "./Tag.types";
 

@@ -20,6 +20,7 @@ export const setConfirmHandler = (handler: OpenDialogHandler) => {
 // ALERT
 export const alert = (options: string | AlertOptions): Promise<void> => {
   return new Promise<void>((resolve) => {
+    console.log(resolve, "resolve");
     resolveFn = resolve;
 
     const opts = typeof options === "string" ? { message: options } : options;
@@ -55,15 +56,14 @@ export const confirm = (options: string | ConfirmOptions): Promise<boolean> => {
   });
 };
 
-// Provider에서 호출됨
 export const resolveDialog = (value?: boolean) => {
   if (!resolveFn) return;
 
-  // () => void 인 경우 (alert)
+  // alert 의 resolve()는 매개변수가 없음
   if (resolveFn.length === 0) {
     (resolveFn as () => void)();
   } else {
-    // (value: boolean) => void 인 경우 (confirm)
+    // confirm 의 resolve(value) 는 boolean 필요
     (resolveFn as (v: boolean) => void)(Boolean(value));
   }
 

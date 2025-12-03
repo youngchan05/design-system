@@ -1,4 +1,3 @@
-import React from "react";
 import { Wrapper, HiddenInput, Circle, Dot, LabelBox } from "./Radio.styles";
 import type { RadioProps } from "./Radio.types";
 import { HelperText } from "../HelperText/HelperText";
