@@ -9,6 +9,14 @@ import SelectPage from "./docs/pages/select";
 import BadgePage from "./docs/pages/badge";
 import AvatarPage from "./docs/pages/avatar";
 import TagPage from "./docs/pages/tag";
+import TooltipPage from "./docs/pages/tooltip";
+import ModalPage from "./docs/pages/modal";
+import TabsPage from "./docs/pages/tabs";
+import ProgressPage from "./docs/pages/progress";
+import SkeletonPage from "./docs/pages/skeleton";
+import ToastPage from "./docs/pages/toast";
+import PaginationPage from "./docs/pages/pagination";
+import ConfirmPage from "./docs/pages/confirm";
 
 function App() {
   return (
@@ -25,6 +33,14 @@ function App() {
       <Route path="/docs/badge" element={<BadgePage />} />
       <Route path="/docs/avatar" element={<AvatarPage />} />
       <Route path="/docs/tag" element={<TagPage />} />
+      <Route path="/docs/tooltip" element={<TooltipPage />} />
+      <Route path="/docs/modal" element={<ModalPage />} />
+      <Route path="/docs/tabs" element={<TabsPage />} />
+      <Route path="/docs/progress" element={<ProgressPage />} />
+      <Route path="/docs/skeleton" element={<SkeletonPage />} />
+      <Route path="/docs/toast" element={<ToastPage />} />
+      <Route path="/docs/pagination" element={<PaginationPage />} />
+      <Route path="/docs/confirm" element={<ConfirmPage />} />
     </Routes>
   );
 }

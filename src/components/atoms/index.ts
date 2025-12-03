@@ -8,3 +8,6 @@ export { HelperText } from "./HelperText/HelperText.tsx";
 export { Badge } from "./Badge/Badge.tsx";
 export { Avatar } from "./Avatar/Avatar.tsx";
 export { Tag } from "./Tag/Tag.tsx";
+export { Tooltip } from "./Tooltip/Tooltip.tsx";
+export { Progress } from "./Progress/Progress.tsx";
+export { Skeleton } from "./Skeleton/Skeleton.tsx";

@@ -67,6 +67,14 @@ export const Sidebar = () => {
       {/* <NavItem to="/docs/badge">badge</NavItem> */}
       <NavItem to="/docs/avatar">avatar</NavItem>
       <NavItem to="/docs/tag">tag</NavItem>
+      <NavItem to="/docs/tooltip">tooltip</NavItem>
+      <NavItem to="/docs/modal">modal</NavItem>
+      <NavItem to="/docs/tabs">tabs</NavItem>
+      <NavItem to="/docs/progress">progress</NavItem>
+      <NavItem to="/docs/skeleton">skeleton</NavItem>
+      <NavItem to="/docs/toast">toast</NavItem>
+      <NavItem to="/docs/pagination">pagination</NavItem>
+      <NavItem to="/docs/confirm">confirm</NavItem>
     </Wrapper>
   );
 };

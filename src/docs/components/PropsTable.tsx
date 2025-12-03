@@ -62,7 +62,13 @@ const PropName = styled.code`
 export const PropsTable = ({
   data,
 }: {
-  data: { name: string; type: string; default?: string }[];
+  data: {
+    name: string;
+    type: string;
+    default?: string;
+    description?: string;
+    required?: boolean;
+  }[];
 }) => {
   return (
     <Wrapper>
@@ -72,6 +78,8 @@ export const PropsTable = ({
             <th>Prop</th>
             <th>Type</th>
             <th>Default</th>
+            <th>Required</th>
+            <th>Description</th>
           </tr>
         </Thead>
         <Tbody>
@@ -84,6 +92,14 @@ export const PropsTable = ({
                 <code>{row.type}</code>
               </td>
               <td>{row.default ? <code>{row.default}</code> : "-"}</td>
+
+              {/* Required */}
+              <td style={{ color: row.required ? "#ef4444" : "#64748b" }}>
+                {row.required ? "✔" : "-"}
+              </td>
+
+              {/* Description */}
+              <td>{row.description ?? "-"}</td>
             </tr>
           ))}
         </Tbody>
