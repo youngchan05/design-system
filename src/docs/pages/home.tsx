@@ -71,7 +71,7 @@ export default function HomePage() {
   return (
     <DocsLayout>
       <Hero>
-        <Title>필 디자인 시스템</Title>
+        <Title>디자인 시스템</Title>
         <Subtitle>
           일관된 사용자 경험과 효율적인 개발을 위한 컴포넌트 기반 디자인
           시스템입니다. React + TypeScript 기반으로 구축되어 재사용성과 확장성이
@@ -83,7 +83,7 @@ export default function HomePage() {
       <Section>
         <SectionTitle>시작하기</SectionTitle>
         <Text>
-          필 디자인 시스템은 React + TypeScript + Vite로 구성된 UI 컴포넌트
+          디자인 시스템은 React + TypeScript + Vite로 구성된 UI 컴포넌트
           라이브러리입니다. 문서 사이트에서는 컴포넌트 사용법, 프롭 타입, 예시
           코드 등을 확인할 수 있습니다.
         </Text>
@@ -159,7 +159,7 @@ export default function HomePage() {
       <Section>
         <SectionTitle>디자인 원칙</SectionTitle>
         <Text>
-          필 디자인 시스템은 일관성, 접근성, 재사용성을 중심 가치로 삼습니다.
+          디자인 시스템은 일관성, 접근성, 재사용성을 중심 가치로 삼습니다.
           컴포넌트와 토큰은 Atomic Design 기반 설계를 따르며, 모든 UI 요소는
           직관적이고 사용하기 쉽도록 구성되었습니다.
         </Text>
