@@ -17,11 +17,12 @@ import SkeletonPage from "./docs/pages/skeleton";
 import ToastPage from "./docs/pages/toast";
 import PaginationPage from "./docs/pages/pagination";
 import ConfirmPage from "./docs/pages/confirm";
+import HomePage from "./docs/pages/home";
 
 function App() {
   return (
     <Routes>
-      {/* <Route path="/" element={<Home />} /> */}
+      <Route path="/" element={<HomePage />} />
       <Route path="/docs/button" element={<ButtonPage />} />
       <Route path="/docs/input" element={<InputPage />} />
       <Route path="/docs/textarea" element={<TextareaPage />} />
