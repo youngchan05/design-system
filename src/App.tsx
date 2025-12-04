@@ -18,6 +18,8 @@ import ToastPage from "./docs/pages/toast";
 import PaginationPage from "./docs/pages/pagination";
 import ConfirmPage from "./docs/pages/confirm";
 import HomePage from "./docs/pages/home";
+import FileUploadPage from "./docs/pages/file-upload";
+import FileDropzonePage from "./docs/pages/file-dropzone";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
       <Route path="/docs/toast" element={<ToastPage />} />
       <Route path="/docs/pagination" element={<PaginationPage />} />
       <Route path="/docs/confirm" element={<ConfirmPage />} />
+      <Route path="/docs/fileUpload" element={<FileUploadPage />} />
+      <Route path="/docs/fileDropzone" element={<FileDropzonePage />} />
     </Routes>
   );
 }

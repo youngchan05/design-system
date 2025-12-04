@@ -7,7 +7,7 @@ import type { DialogState } from "./Confirm.types";
 export const ConfirmProvider = ({
   children,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }) => {
   const [state, setState] = useState<DialogState>({
     open: false,

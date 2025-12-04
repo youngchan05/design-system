@@ -16,11 +16,10 @@ createRoot(document.getElementById("root")!).render(
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter>
-        <ConfirmProvider>
-          <ToastProvider>
-            <App />
-          </ToastProvider>
-        </ConfirmProvider>
+        <ToastProvider>
+          <ConfirmProvider />
+          <App />
+        </ToastProvider>
       </BrowserRouter>
     </ThemeProvider>
   </StrictMode>
