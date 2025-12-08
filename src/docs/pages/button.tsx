@@ -58,6 +58,19 @@ export default function ButtonPage() {
         <Button size="lg">Large</Button>
       </Preview>
 
+      <SectionTitle>fullWidth</SectionTitle>
+      <Preview>
+        <Button size="sm" fullWidth>
+          Small
+        </Button>
+        <Button size="md" fullWidth>
+          Medium
+        </Button>
+        <Button size="lg" fullWidth>
+          Large
+        </Button>
+      </Preview>
+
       <SectionTitle>Props</SectionTitle>
       <PropsTable
         data={[
