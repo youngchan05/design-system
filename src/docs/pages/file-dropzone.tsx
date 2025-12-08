@@ -29,6 +29,8 @@ export default function FileDropzonePage() {
   const [imageFiles, setImageFiles] = useState<FileList | null>(null);
   const [previewFiles, setPreviewFiles] = useState<FileList | null>(null);
 
+  console.log(imageFiles, "imageFiles");
+
   return (
     <DocsLayout>
       <Heading>File Dropzone</Heading>

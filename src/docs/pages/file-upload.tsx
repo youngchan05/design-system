@@ -27,6 +27,8 @@ export default function FileUploadPage() {
   const [multiFiles, setMultiFiles] = useState<FileList | null>(null);
   const [errorFiles, setErrorFiles] = useState<FileList | null>(null);
 
+  console.log(errorFiles, "errorFiles");
+
   return (
     <DocsLayout>
       <Heading>File Upload</Heading>
