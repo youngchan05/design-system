@@ -20,6 +20,7 @@ import ConfirmPage from "./docs/pages/confirm";
 import HomePage from "./docs/pages/home";
 import FileUploadPage from "./docs/pages/file-upload";
 import FileDropzonePage from "./docs/pages/file-dropzone";
+import Test from "./docs/pages/test";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
       <Route path="/docs/confirm" element={<ConfirmPage />} />
       <Route path="/docs/fileUpload" element={<FileUploadPage />} />
       <Route path="/docs/fileDropzone" element={<FileDropzonePage />} />
+      <Route path="/test" element={<Test />} />
     </Routes>
   );
 }

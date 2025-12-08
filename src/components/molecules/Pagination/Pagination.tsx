@@ -63,7 +63,7 @@ export const Pagination = ({
       {pagination.map((p, i) =>
         typeof p === "string" ? (
           <PaginationItem
-            key={i}
+            key={`${p}-${i}`}
             type="ellipsis"
             size={size}
             variant={variant}
