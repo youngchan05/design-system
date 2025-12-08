@@ -55,6 +55,7 @@ export const Sidebar = () => {
       <NavItem to="/">Getting started</NavItem>
 
       <SectionTitle>Components</SectionTitle>
+      <NavItem to="/docs/color">color</NavItem>
       <NavItem to="/docs/button">Button</NavItem>
 
       <NavItem to="/docs/input">Input</NavItem>
@@ -64,6 +65,7 @@ export const Sidebar = () => {
       <NavItem to="/docs/radio">radio</NavItem>
       <NavItem to="/docs/switch">switch</NavItem>
       <NavItem to="/docs/select">select</NavItem>
+      <NavItem to="/docs/datepicker">datepicker</NavItem>
       {/* <NavItem to="/docs/badge">badge</NavItem> */}
       <NavItem to="/docs/avatar">avatar</NavItem>
       <NavItem to="/docs/tag">tag</NavItem>

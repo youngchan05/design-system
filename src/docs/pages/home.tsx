@@ -93,6 +93,10 @@ export default function HomePage() {
       <Section>
         <SectionTitle>컴포넌트 빠른 이동</SectionTitle>
         <Cards>
+          <Card to="/docs/color">
+            <h3>Color</h3>
+            <p>색상 토큰</p>
+          </Card>
           <Card to="/docs/button">
             <h3>Button</h3>
             <p>가장 기본적인 액션 요소</p>

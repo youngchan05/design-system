@@ -21,11 +21,14 @@ import HomePage from "./docs/pages/home";
 import FileUploadPage from "./docs/pages/file-upload";
 import FileDropzonePage from "./docs/pages/file-dropzone";
 import Test from "./docs/pages/test";
+import ColorsPage from "./docs/pages/color";
+import DatePickerPage from "./docs/pages/datePicker";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/docs/color" element={<ColorsPage />} />
       <Route path="/docs/button" element={<ButtonPage />} />
       <Route path="/docs/input" element={<InputPage />} />
       <Route path="/docs/textarea" element={<TextareaPage />} />
@@ -47,6 +50,7 @@ function App() {
       <Route path="/docs/confirm" element={<ConfirmPage />} />
       <Route path="/docs/fileUpload" element={<FileUploadPage />} />
       <Route path="/docs/fileDropzone" element={<FileDropzonePage />} />
+      <Route path="/docs/datepicker" element={<DatePickerPage />} />
       <Route path="/test" element={<Test />} />
     </Routes>
   );

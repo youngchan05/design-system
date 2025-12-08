@@ -2,25 +2,8 @@ import { Button } from "@components/atoms";
 import { DocsLayout } from "../components/DocsLayout";
 import { Preview } from "../components/Preview";
 import { PropsTable } from "../components/PropsTable";
-import styled from "styled-components";
 import { FiPlus } from "react-icons/fi";
-
-const Heading = styled.h1`
-  font-size: 28px;
-  margin-bottom: 8px;
-`;
-
-const SubTitle = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.gray[500]};
-  margin-bottom: 24px;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 18px;
-  margin-top: 32px;
-  margin-bottom: 8px;
-`;
+import { Heading, SectionTitle, SubTitle } from "../components/DocsStyle";
 
 export default function ButtonPage() {
   return (
@@ -30,15 +13,17 @@ export default function ButtonPage() {
 
       <SectionTitle>Variants</SectionTitle>
       <Preview>
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="destructive">Delete</Button>
+        <Button variant="primary-solid">primary</Button>
+        <Button variant="success-solid">success</Button>
+        <Button variant="warning-solid">warning</Button>
+        <Button variant="danger-solid">danger</Button>
+        <Button variant="primary-outline">Outline</Button>
+        <Button variant="primary-ghost">Ghost</Button>
+        <Button variant="primary-soft">Ghost</Button>
+        <Button variant="primary-link">Ghost</Button>
 
         {/* Icon-only */}
         <Button leftIcon={<FiPlus />} aria-label="Add" />
-
         <Button rightIcon={<FiPlus />}>rightIcon</Button>
         <Button leftIcon={<FiPlus />}>leftIcon</Button>
       </Preview>
@@ -52,13 +37,13 @@ export default function ButtonPage() {
 
       <SectionTitle>Loading</SectionTitle>
       <Preview>
+        <Button loading></Button>
+        <Button loading variant="success-solid"></Button>
+        <Button loading variant="warning-solid"></Button>
+        <Button loading variant="danger-solid"></Button>
+        <Button loading variant="primary-ghost"></Button>
+        <Button loading variant="primary-outline"></Button>
         <Button loading>Loading...</Button>
-        <Button loading variant="outline">
-          Loading
-        </Button>
-        <Button loading size="lg">
-          Custom
-        </Button>
       </Preview>
 
       <p>
@@ -78,8 +63,8 @@ export default function ButtonPage() {
         data={[
           {
             name: "variant",
-            type: `"primary" | "secondary" | "outline" | "ghost" | "destructive"`,
-            default: "primary",
+            type: `"primary-solid" | "primary-outline" | "primary-ghost" | "primary-soft" | "primary-link" | "success-solid" | "success-outline" | "success-ghost" | "success-soft" | "success-link" | "warning-solid" | "warning-outline" | "warning-ghost" | "warning-soft" | "warning-link" | "danger-solid" | "danger-outline" | "danger-ghost" | "danger-soft" | "danger-link" | "info-solid" | "info-outline" | "info-ghost" | "info-soft" | "info-link" `,
+            default: "primary-solid",
           },
           { name: "size", type: `"sm" | "md" | "lg"`, default: "md" },
           { name: "fullWidth", type: "boolean", default: "false" },
