@@ -1,24 +1,9 @@
-import styled from "styled-components";
 import { DocsLayout } from "../components/DocsLayout";
 import { Preview } from "../components/Preview";
 import { PropsTable } from "../components/PropsTable";
 import { FiMail, FiSearch, FiLock } from "react-icons/fi";
 import { Input } from "@components/atoms";
-
-const Heading = styled.h1`
-  font-size: 28px;
-  margin-bottom: 8px;
-`;
-const SubTitle = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.gray[500]};
-  margin-bottom: 24px;
-`;
-const SectionTitle = styled.h2`
-  font-size: 18px;
-  margin-top: 32px;
-  margin-bottom: 8px;
-`;
+import { Heading, SectionTitle, SubTitle } from "../components/DocsStyle";
 
 export default function InputPage() {
   return (
@@ -41,6 +26,7 @@ export default function InputPage() {
       <SectionTitle>With Label</SectionTitle>
       <Preview>
         <Input label="Email" placeholder="example@mail.com" />
+        <Input label="required" required placeholder="example@mail.com" />
       </Preview>
 
       {/* Helper */}
@@ -73,9 +59,9 @@ export default function InputPage() {
       </Preview>
 
       {/* Clearable */}
-      <SectionTitle>Clearable</SectionTitle>
+      <SectionTitle>Without Clearable</SectionTitle>
       <Preview>
-        <Input clearable placeholder="Type something..." />
+        <Input clearable={false} placeholder="Type something..." />
       </Preview>
 
       {/* Password Toggle */}
@@ -108,7 +94,7 @@ export default function InputPage() {
           { name: "leftIcon", type: "ReactNode" },
           { name: "rightIcon", type: "ReactNode" },
           { name: "required", type: "boolean" },
-          { name: "clearable", type: "boolean", default: "false" },
+          { name: "clearable", type: "boolean", default: "true" },
           { name: "type", type: "string" },
           { name: "disabled", type: "boolean" },
         ]}

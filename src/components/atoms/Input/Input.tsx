@@ -18,7 +18,7 @@ export const Input = ({
   size = "md",
   leftIcon,
   rightIcon,
-  clearable = false,
+  clearable = true,
   required = false,
   type = "text",
   id,
@@ -47,7 +47,11 @@ export const Input = ({
 
   return (
     <Wrapper $fullWidth={fullWidth}>
-      {label && <Label required={required}>{label}</Label>}
+      {label && (
+        <Label htmlFor={generatedId} required={required}>
+          {label}
+        </Label>
+      )}
 
       <InputContainer $error={error} $disabled={props.disabled} $size={size}>
         {leftIcon && <span>{leftIcon}</span>}
@@ -60,15 +64,15 @@ export const Input = ({
           type={isPassword && showPassword ? "text" : type}
         />
 
-        {/* rightIcon이 있다면 표시 */}
-        {rightIcon && <span>{rightIcon}</span>}
-
         {/* clear button */}
-        {clearable && value && !isPassword && (
+        {clearable && value && (
           <IconButton type="button" onClick={clearInput}>
             <FiX size={16} />
           </IconButton>
         )}
+
+        {/* rightIcon이 있다면 표시 */}
+        {rightIcon && <span>{rightIcon}</span>}
 
         {/* password toggle */}
         {isPassword && (

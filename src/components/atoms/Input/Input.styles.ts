@@ -87,8 +87,8 @@ export const StyledInput = styled.input`
 `;
 
 export const IconButton = styled.button`
-  position: absolute;
-  right: 10px;
+  /* position: absolute;
+  right: 10px; */
   display: inline-flex;
   align-items: center;
   justify-content: center;
