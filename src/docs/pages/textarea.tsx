@@ -1,23 +1,8 @@
-import styled from "styled-components";
 import { DocsLayout } from "../components/DocsLayout";
 import { Preview } from "../components/Preview";
 import { PropsTable } from "../components/PropsTable";
 import { Textarea } from "@components/atoms";
-
-const Heading = styled.h1`
-  font-size: 28px;
-  margin-bottom: 8px;
-`;
-const SubTitle = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.gray[500]};
-  margin-bottom: 24px;
-`;
-const SectionTitle = styled.h2`
-  font-size: 18px;
-  margin-top: 32px;
-  margin-bottom: 8px;
-`;
+import { Heading, SectionTitle, SubTitle } from "../components/DocsStyle";
 
 export default function TextareaPage() {
   return (
@@ -36,10 +21,11 @@ export default function TextareaPage() {
         <Textarea placeholder="Large..." size="lg" />
       </Preview>
 
-      {/* autoSize */}
-      <SectionTitle>Auto Size</SectionTitle>
+      {/* label */}
+      <SectionTitle>With Label</SectionTitle>
       <Preview>
-        <Textarea autoSize placeholder="Type..." />
+        <Textarea label="text" placeholder="text..." />
+        <Textarea required label="required" placeholder="required..." />
       </Preview>
 
       {/* Error */}
@@ -68,7 +54,8 @@ export default function TextareaPage() {
           { name: "error", type: "boolean", default: "false" },
           { name: "fullWidth", type: "boolean", default: "false" },
           { name: "size", type: `"sm" | "md" | "lg"`, default: "md" },
-          { name: "autoSize", type: "boolean", default: "false" },
+          { name: "required", type: "boolean" },
+          { name: "clearable", type: "boolean", default: "true" },
           { name: "disabled", type: "boolean" },
         ]}
       />

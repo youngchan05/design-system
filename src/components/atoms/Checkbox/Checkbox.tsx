@@ -9,7 +9,7 @@ import {
   LabelText,
 } from "./Checkbox.styles";
 import { CgCheck } from "react-icons/cg";
-import { HelperText } from "../HelperText/HelperText";
+import { Text } from "../Text/Text.styles";
 
 export const Checkbox = ({
   label,
@@ -59,7 +59,7 @@ export const Checkbox = ({
       {(label || helperText) && (
         <LabelText>
           {label && <span>{label}</span>}
-          {helperText && <HelperText error={error}>{helperText}</HelperText>}
+          {helperText && <Text.Helper $error={error}>{helperText}</Text.Helper>}
         </LabelText>
       )}
     </Wrapper>

@@ -1,6 +1,6 @@
 import { Wrapper, HiddenInput, Circle, Dot, LabelBox } from "./Radio.styles";
 import type { RadioProps } from "./Radio.types";
-import { HelperText } from "../HelperText/HelperText";
+import { Text } from "../Text/Text.styles";
 
 export const Radio = ({
   label,
@@ -39,7 +39,7 @@ export const Radio = ({
       {(label || helperText) && (
         <LabelBox>
           {label && <span>{label}</span>}
-          {helperText && <HelperText error={error}>{helperText}</HelperText>}
+          {helperText && <Text.Helper $error={error}>{helperText}</Text.Helper>}
         </LabelBox>
       )}
     </Wrapper>

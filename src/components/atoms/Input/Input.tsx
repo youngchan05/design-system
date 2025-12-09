@@ -3,12 +3,11 @@ import {
   Wrapper,
   InputContainer,
   StyledInput,
-  Label,
   IconButton,
 } from "./Input.styles";
 import { FiX, FiEye, FiEyeOff } from "react-icons/fi";
 import type { InputProps } from "./Input.types";
-import { HelperText } from "../HelperText/HelperText";
+import { Text } from "../Text/Text.styles";
 
 export const Input = ({
   label,
@@ -48,9 +47,9 @@ export const Input = ({
   return (
     <Wrapper $fullWidth={fullWidth}>
       {label && (
-        <Label htmlFor={generatedId} required={required}>
+        <Text.Label htmlFor={generatedId} required={required}>
           {label}
-        </Label>
+        </Text.Label>
       )}
 
       <InputContainer $error={error} $disabled={props.disabled} $size={size}>
@@ -85,7 +84,7 @@ export const Input = ({
         )}
       </InputContainer>
 
-      {helperText && <HelperText error={error}>{helperText}</HelperText>}
+      {helperText && <Text.Helper $error={error}>{helperText}</Text.Helper>}
     </Wrapper>
   );
 };

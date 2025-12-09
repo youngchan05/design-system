@@ -8,22 +8,6 @@ export const Wrapper = styled.div<{ $fullWidth?: boolean }>`
   gap: 6px;
 `;
 
-export const Label = styled.label<{ required?: boolean }>`
-  font-size: 14px;
-  font-weight: 500;
-  color: ${({ theme }) => theme.colors.gray[700]};
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
-  &::after {
-    content: ${({ required }) => (required ? '"*"' : '""')};
-    color: #e5484d;
-    font-size: 14px;
-    font-weight: 600;
-  }
-`;
-
 export const InputContainer = styled.div<{
   $error?: boolean;
   $disabled?: boolean;

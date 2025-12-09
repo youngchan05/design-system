@@ -1,10 +1,10 @@
+export { Text } from "./Text/Text.styles.ts";
 export { Button } from "./Button/Button.tsx";
 export { Input } from "./Input/Input.tsx";
 export { Textarea } from "./Textarea/Textarea.tsx";
 export { Checkbox } from "./Checkbox/Checkbox.tsx";
 export { Radio } from "./Radio/Radio.tsx";
 export { Switch } from "./Switch/Switch.tsx";
-export { HelperText } from "./HelperText/HelperText.tsx";
 export { Badge } from "./Badge/Badge.tsx";
 export { Avatar } from "./Avatar/Avatar.tsx";
 export { Tag } from "./Tag/Tag.tsx";

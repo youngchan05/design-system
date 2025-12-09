@@ -1,6 +1,5 @@
+import type { ComponentSize } from "@components/types";
 import React from "react";
-
-export type InputSize = "sm" | "md" | "lg";
 
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
@@ -8,7 +7,7 @@ export interface InputProps
   helperText?: string;
   error?: boolean;
   fullWidth?: boolean;
-  size?: InputSize;
+  size?: ComponentSize;
 
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;

@@ -1,6 +1,5 @@
+import type { ComponentSize } from "@components/types";
 import React from "react";
-
-export type TextareaSize = "sm" | "md" | "lg";
 
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -8,7 +7,6 @@ export interface TextareaProps
   helperText?: string;
   error?: boolean;
   fullWidth?: boolean;
-  size?: TextareaSize;
-
-  autoSize?: boolean; // ★ 자동 높이 조절
+  clearable?: boolean;
+  size?: ComponentSize;
 }

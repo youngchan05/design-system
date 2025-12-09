@@ -8,25 +8,15 @@ export const Wrapper = styled.div<{ $fullWidth?: boolean }>`
   gap: 6px;
 `;
 
-export const Label = styled.label`
-  font-size: 14px;
-  font-weight: 500;
-  color: ${({ theme }) => theme.colors.gray[700]};
-`;
-
-export const Helper = styled.span<{ $error?: boolean }>`
-  font-size: 12px;
-  color: ${({ theme, $error }) =>
-    $error ? "#E5484D" : theme.colors.gray[500]};
-`;
-
-export const StyledTextarea = styled.textarea<{
+export const TextareaContainer = styled.div<{
   $error?: boolean;
   $disabled?: boolean;
   $size?: TextareaProps["size"];
 }>`
+  display: flex;
+  align-items: center;
+  gap: 8px;
   width: 100%;
-  resize: none;
   border: 1px solid
     ${({ theme, $error }) => ($error ? "#E5484D" : theme.colors.gray[300])};
   border-radius: ${({ theme }) => theme.radius.md};
@@ -54,8 +44,8 @@ export const StyledTextarea = styled.textarea<{
     }
   }}
 
-  ${({ disabled, theme }) =>
-    disabled &&
+  ${({ $disabled, theme }) =>
+    $disabled &&
     css`
       background: ${theme.colors.gray[100]};
       color: ${theme.colors.gray[400]};
@@ -63,11 +53,21 @@ export const StyledTextarea = styled.textarea<{
       opacity: 0.6;
     `}
 
-  &:focus {
+  &:focus-within {
     border-color: ${({ theme }) => theme.colors.primary[500]};
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary[100]};
-    outline: none;
   }
+`;
+
+export const StyledTextarea = styled.textarea`
+  border: none;
+  outline: none;
+  flex: 1;
+  height: 100%;
+  resize: none;
+  background: transparent;
+  font-size: inherit;
+  color: ${({ theme }) => theme.colors.gray[900]};
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.gray[400]};

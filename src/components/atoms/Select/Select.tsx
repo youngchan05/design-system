@@ -8,7 +8,7 @@ import {
   Arrow,
 } from "./Select.styles";
 import type { SelectProps } from "./Select.types";
-import { HelperText } from "../HelperText/HelperText";
+import { Text } from "../Text/Text.styles";
 
 export const Select = ({
   options,
@@ -126,7 +126,7 @@ export const Select = ({
         </Menu>
       </Trigger>
 
-      {helperText && <HelperText error={error}>{helperText}</HelperText>}
+      {helperText && <Text.Helper $error={error}>{helperText}</Text.Helper>}
     </Wrapper>
   );
 };
