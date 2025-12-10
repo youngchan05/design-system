@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import type { SelectProps } from "./Select.types";
 
 export const Wrapper = styled.div<{ $fullWidth?: boolean }>`
   width: ${({ $fullWidth }) => ($fullWidth ? "100%" : "auto")};
@@ -13,61 +12,8 @@ export const Trigger = styled.button<{
   $disabled?: boolean;
   $error?: boolean;
   $open?: boolean;
-  $size?: SelectProps["size"];
 }>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
   position: relative;
-  border: 1px solid
-    ${({ theme, $error, $open }) =>
-      $error
-        ? "#E5484D"
-        : $open
-        ? theme.colors.gray[600]
-        : theme.colors.gray[300]};
-  border-radius: ${({ theme }) => theme.radius.md};
-  background: white;
-
-  ${({ $size }) => {
-    switch ($size) {
-      case "sm":
-        return css`
-          padding: 6px 10px;
-          font-size: 13px;
-        `;
-      case "lg":
-        return css`
-          padding: 12px 14px;
-          font-size: 16px;
-        `;
-      default:
-        return css`
-          padding: 10px 12px;
-          font-size: 14px;
-        `;
-    }
-  }}
-
-  transition: all 0.15s ease;
-
-  ${({ $disabled }) =>
-    $disabled &&
-    css`
-      background: ${({ theme }) => theme.colors.gray[100]};
-      cursor: not-allowed;
-      opacity: 0.6;
-    `}
-
-  ${({ $disabled }) =>
-    !$disabled &&
-    css`
-      &:hover {
-        border-color: ${({ theme }) => theme.colors.gray[400]};
-        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
-      }
-    `}
 `;
 
 export const Arrow = styled.span<{ $open?: boolean }>`

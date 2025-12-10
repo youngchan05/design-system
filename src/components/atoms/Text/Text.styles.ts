@@ -18,6 +18,7 @@ export const Label = styled.label<{ required?: boolean }>`
 
 const Helper = styled.span<{ $error?: boolean }>`
   font-size: 12px;
+  text-align: left;
   color: ${({ theme, $error }) =>
     $error ? "#E5484D" : theme.colors.gray[500]};
 `;

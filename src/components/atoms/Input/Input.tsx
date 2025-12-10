@@ -1,4 +1,3 @@
-import React, { useId, useState } from "react";
 import {
   Wrapper,
   InputContainer,
@@ -8,6 +7,7 @@ import {
 import { FiX, FiEye, FiEyeOff } from "react-icons/fi";
 import type { InputProps } from "./Input.types";
 import { Text } from "../Text/Text.styles";
+import useInput from "./useInput";
 
 export const Input = ({
   label,
@@ -24,28 +24,26 @@ export const Input = ({
   value,
   ...props
 }: InputProps) => {
-  const generatedId = useId();
-  const inputId = id ?? generatedId;
-  const [showPassword, setShowPassword] = useState(false);
-
-  const isPassword = type === "password";
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    props.onChange?.(e); // 기존 onChange 호출 유지
-  };
-
-  const clearInput = () => {
-    const event = {
-      target: { value: "" },
-    } as React.ChangeEvent<HTMLInputElement>;
-
-    props.onChange?.(event);
-  };
+  const {
+    selectedValue,
+    inputId,
+    clearInput,
+    handleChange,
+    isPassword,
+    showPassword,
+    setShowPassword,
+    inputRef,
+  } = useInput({
+    onChange: props.onChange,
+    value,
+    type,
+    id,
+  });
 
   return (
     <Wrapper $fullWidth={fullWidth}>
       {label && (
-        <Text.Label htmlFor={generatedId} required={required}>
+        <Text.Label htmlFor={inputId} required={required}>
           {label}
         </Text.Label>
       )}
@@ -54,15 +52,16 @@ export const Input = ({
         {leftIcon && <span>{leftIcon}</span>}
 
         <StyledInput
+          ref={inputRef}
           id={inputId}
           {...props}
-          value={value}
+          value={selectedValue}
           onChange={handleChange}
           type={isPassword && showPassword ? "text" : type}
         />
 
         {/* clear button */}
-        {clearable && value && (
+        {clearable && selectedValue && (
           <IconButton type="button" onClick={clearInput}>
             <FiX size={16} />
           </IconButton>

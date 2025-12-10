@@ -122,6 +122,7 @@ export default function SelectPage() {
           options={sampleOptions}
           onChange={(v) => setIsSelected(v)}
         />
+        selected: {isSelected}
       </Preview>
 
       {/* FullWidth */}

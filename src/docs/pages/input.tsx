@@ -4,8 +4,10 @@ import { PropsTable } from "../components/PropsTable";
 import { FiMail, FiSearch, FiLock } from "react-icons/fi";
 import { Input } from "@components/atoms";
 import { Heading, SectionTitle, SubTitle } from "../components/DocsStyle";
+import { useState } from "react";
 
 export default function InputPage() {
+  const [value, setValue] = useState("");
   return (
     <DocsLayout>
       <Heading>Input</Heading>
@@ -74,6 +76,20 @@ export default function InputPage() {
       <SectionTitle>Disabled</SectionTitle>
       <Preview>
         <Input label="Disabled" placeholder="Not editable" disabled />
+      </Preview>
+
+      {/* Controlled */}
+      <SectionTitle>Controlled Exampl</SectionTitle>
+      <Preview>
+        <Input
+          value={value}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setValue(e.target.value)
+          }
+          label="Controlled"
+          placeholder="Enter text"
+        />
+        input value : {value}
       </Preview>
 
       {/* Full Width */}

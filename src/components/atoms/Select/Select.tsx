@@ -1,14 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
-import {
-  Wrapper,
-  Trigger,
-  Menu,
-  Option,
-  Placeholder,
-  Arrow,
-} from "./Select.styles";
+import { Wrapper, Trigger, Menu, Option } from "./Select.styles";
 import type { SelectProps } from "./Select.types";
-import { Text } from "../Text/Text.styles";
+import { Input } from "../Input/Input";
+import useSelect from "./useSelect";
 
 export const Select = ({
   options,
@@ -23,95 +16,47 @@ export const Select = ({
   size = "md",
   onChange,
 }: SelectProps) => {
-  const [open, setOpen] = useState(false);
-  const [internalValue, setInternalValue] = useState(defaultValue);
-  const [highlightIndex, setHighlightIndex] = useState<number | null>(null);
-
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isControlled = value !== undefined;
-
-  const selectedValue = isControlled ? value : internalValue;
-  const selectedOption = options.find((o) => o.value === selectedValue);
-
-  const toggleOpen = () => {
-    if (!disabled) setOpen(!open);
-  };
-
-  const handleSelect = (v: string) => {
-    if (isControlled) onChange?.(v);
-    else {
-      setInternalValue(v);
-      onChange?.(v);
-    }
-    setOpen(false);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (!open) {
-      if (e.key === "Enter") setOpen(true);
-      return;
-    }
-
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      setHighlightIndex((i) => {
-        if (i === null) return 0;
-        return Math.min(options.length - 1, i + 1);
-      });
-    }
-
-    if (e.key === "ArrowUp") {
-      e.preventDefault();
-      setHighlightIndex((i) => {
-        if (i === null) return options.length - 1;
-        return Math.max(0, i - 1);
-      });
-    }
-
-    if (e.key === "Enter") {
-      if (highlightIndex !== null) {
-        handleSelect(options[highlightIndex].value);
-      }
-    }
-
-    if (e.key === "Escape") {
-      setOpen(false);
-    }
-  };
-
-  // 바깥 클릭 감지
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, []);
+  const {
+    open,
+    handleSelect,
+    highlightIndex,
+    toggleOpen,
+    handleKeyDown,
+    selectedOption,
+    containerRef,
+  } = useSelect({
+    value,
+    defaultValue,
+    onChange,
+    options,
+  });
 
   return (
     <Wrapper ref={containerRef} $fullWidth={fullWidth}>
-      {label && <label>{label}</label>}
-
-      <Trigger
-        $disabled={disabled}
-        $error={error}
-        $size={size}
-        onClick={toggleOpen}
-        onKeyDown={handleKeyDown}
-        type="button"
-      >
-        {selectedOption ? (
-          <span>{selectedOption.label}</span>
-        ) : (
-          <Placeholder>{placeholder}</Placeholder>
-        )}
-
-        <Arrow $open={open}>▼</Arrow>
+      <Trigger>
+        <Input
+          label={label}
+          readOnly
+          disabled={disabled}
+          error={error}
+          size={size}
+          onClick={toggleOpen}
+          onKeyDown={handleKeyDown}
+          placeholder={placeholder}
+          clearable={false}
+          helperText={helperText}
+          value={selectedOption?.label || ""}
+          rightIcon={
+            <i
+              style={{
+                display: "inline-flex",
+                transform: open ? "rotate(180deg)" : "rotate(0deg)",
+              }}
+            >
+              ▼
+            </i>
+          }
+        />
         <Menu $open={open}>
           {options.map((opt, idx) => (
             <Option
@@ -125,8 +70,6 @@ export const Select = ({
           ))}
         </Menu>
       </Trigger>
-
-      {helperText && <Text.Helper $error={error}>{helperText}</Text.Helper>}
     </Wrapper>
   );
 };

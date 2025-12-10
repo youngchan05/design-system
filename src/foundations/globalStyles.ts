@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   article, aside, canvas, details, embed, 
   figure, figcaption, footer, header, hgroup, 
   menu, nav, output, ruby, section, summary,
-  time, mark, audio, video ,textarea , input{
+  time, mark, audio, video ,textarea , input , button{
     margin: 0;
     padding: 0;
     border: 0;
@@ -45,6 +45,12 @@ export const GlobalStyle = createGlobalStyle`
   q:before, q:after {
     content: '';
     content: none;
+  }
+  button {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
   }
   table {
     border-collapse: collapse;
