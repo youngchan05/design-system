@@ -43,6 +43,9 @@ export const Box = styled.span<{
         return css`
           width: 16px;
           height: 16px;
+          + .labelText {
+            line-height: 16px;
+          }
         `;
       case "lg":
         return css`

@@ -21,17 +21,16 @@ export const Input = ({
   required = false,
   type = "text",
   id,
+  value,
   ...props
 }: InputProps) => {
   const generatedId = useId();
   const inputId = id ?? generatedId;
-  const [value, setValue] = useState(props.value ?? "");
   const [showPassword, setShowPassword] = useState(false);
 
   const isPassword = type === "password";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
     props.onChange?.(e); // 기존 onChange 호출 유지
   };
 
@@ -40,7 +39,6 @@ export const Input = ({
       target: { value: "" },
     } as React.ChangeEvent<HTMLInputElement>;
 
-    setValue("");
     props.onChange?.(event);
   };
 

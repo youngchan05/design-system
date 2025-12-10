@@ -1,28 +1,10 @@
-import styled from "styled-components";
 import { DocsLayout } from "../components/DocsLayout";
 import { Preview } from "../components/Preview";
 import { PropsTable } from "../components/PropsTable";
 import { DatePicker } from "@components/molecules/DatePicker/DatePicker";
 import { useState } from "react";
 import type { DateRange } from "react-day-picker";
-
-const Heading = styled.h1`
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 8px;
-`;
-
-const Sub = styled.p`
-  font-size: 15px;
-  color: ${({ theme }) => theme.colors.gray[600]};
-  margin-bottom: 28px;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 20px;
-  margin: 36px 0 12px;
-  font-weight: 600;
-`;
+import { Heading, SectionTitle, SubTitle } from "../components/DocsStyle";
 
 export default function DatePickerPage() {
   const [single, setSingle] = useState<Date | undefined>();
@@ -31,11 +13,11 @@ export default function DatePickerPage() {
   return (
     <DocsLayout>
       <Heading>DatePicker</Heading>
-      <Sub>
+      <SubTitle>
         날짜를 선택하기 위한 컴포넌트입니다. 단일 날짜 선택과 범위 선택을 모두
         지원하며, 월·연도 드롭다운 선택 기능과 디자인시스템 인풋 스타일을 그대로
         사용할 수 있습니다.
-      </Sub>
+      </SubTitle>
 
       {/* Single Picker */}
       <SectionTitle>Single Date Picker</SectionTitle>

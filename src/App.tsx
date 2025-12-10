@@ -6,7 +6,6 @@ import CheckboxPage from "./docs/pages/checkbox";
 import RadioPage from "./docs/pages/radio";
 import SwitchPage from "./docs/pages/switch";
 import SelectPage from "./docs/pages/select";
-import BadgePage from "./docs/pages/badge";
 import AvatarPage from "./docs/pages/avatar";
 import TagPage from "./docs/pages/tag";
 import TooltipPage from "./docs/pages/tooltip";
@@ -37,7 +36,6 @@ function App() {
       <Route path="/docs/radio" element={<RadioPage />} />
       <Route path="/docs/switch" element={<SwitchPage />} />
       <Route path="/docs/select" element={<SelectPage />} />
-      <Route path="/docs/badge" element={<BadgePage />} />
       <Route path="/docs/avatar" element={<AvatarPage />} />
       <Route path="/docs/tag" element={<TagPage />} />
       <Route path="/docs/tooltip" element={<TooltipPage />} />

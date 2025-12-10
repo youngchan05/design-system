@@ -1,25 +1,8 @@
-import styled from "styled-components";
 import { DocsLayout } from "../components/DocsLayout";
 import { Preview } from "../components/Preview";
 import { PropsTable } from "../components/PropsTable";
 import { Tag } from "@components/atoms";
-
-const Heading = styled.h1`
-  font-size: 28px;
-  margin-bottom: 8px;
-`;
-
-const SubTitle = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.gray[500]};
-  margin-bottom: 24px;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 18px;
-  margin-top: 32px;
-  margin-bottom: 8px;
-`;
+import { Heading, SectionTitle, SubTitle } from "../components/DocsStyle";
 
 export default function TagPage() {
   return (
@@ -33,21 +16,21 @@ export default function TagPage() {
       {/* Variants */}
       <SectionTitle>Variants</SectionTitle>
       <Preview>
-        <Tag variant="solid">Solid</Tag>
-        <Tag variant="soft">Soft</Tag>
-        <Tag variant="outline">Outline</Tag>
+        <Tag variant="primary-solid">Solid</Tag>
+        <Tag variant="secondary-soft">Soft</Tag>
+        <Tag variant="neutral-outline">Outline</Tag>
       </Preview>
 
       {/* Colors */}
       <SectionTitle>Colors</SectionTitle>
       <Preview>
-        <Tag color="gray">Gray</Tag>
-        <Tag color="primary">Primary</Tag>
-        <Tag color="success">Success</Tag>
-        <Tag color="warning">Warning</Tag>
-        <Tag color="danger">Danger</Tag>
-        <Tag color="info">Info</Tag>
-        <Tag color="accent">Accent</Tag>
+        <Tag variant="primary-solid">Primary</Tag>
+        <Tag variant="secondary-solid">secondary</Tag>
+        <Tag variant="neutral-solid">neutral</Tag>
+        <Tag variant="success-solid">Success</Tag>
+        <Tag variant="warning-solid">Warning</Tag>
+        <Tag variant="danger-solid">Danger</Tag>
+        <Tag variant="info-solid">Info</Tag>
       </Preview>
 
       {/* Sizes */}

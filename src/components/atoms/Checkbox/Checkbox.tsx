@@ -57,7 +57,7 @@ export const Checkbox = ({
       </Box>
 
       {(label || helperText) && (
-        <LabelText>
+        <LabelText className="labelText">
           {label && <span>{label}</span>}
           {helperText && <Text.Helper $error={error}>{helperText}</Text.Helper>}
         </LabelText>

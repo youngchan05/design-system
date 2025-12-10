@@ -1,22 +1,10 @@
 import styled, { css } from "styled-components";
 import type { TagProps } from "./Tag.types";
-import type { BadgeColor } from "../Badge/Badge.types";
-
-const variantStyles = {
-  solid: css<{ $color: BadgeColor }>`
-    background: ${({ theme, $color }) => theme.colors[$color][500]};
-    color: white;
-  `,
-  soft: css<{ $color: BadgeColor }>`
-    background: ${({ theme, $color }) => theme.colors[$color][100]};
-    color: ${({ theme, $color }) => theme.colors[$color][700]};
-  `,
-  outline: css<{ $color: BadgeColor }>`
-    border: 1px solid ${({ theme, $color }) => theme.colors[$color][400]};
-    background: white;
-    color: ${({ theme, $color }) => theme.colors[$color][700]};
-  `,
-};
+import {
+  getIntentPalette,
+  parseVariant,
+  styleVariant,
+} from "@components/utils.style";
 
 const sizeStyles = {
   sm: css`
@@ -35,7 +23,6 @@ const sizeStyles = {
 
 export const TagWrapper = styled.span<{
   $variant: TagProps["variant"];
-  $color: BadgeColor;
   $size: TagProps["size"];
   $rounded: boolean;
   $selectable: boolean;
@@ -56,25 +43,31 @@ export const TagWrapper = styled.span<{
           border-radius: 6px;
         `}
 
-  ${({ $variant }) => variantStyles[$variant!]};
   ${({ $size }) => sizeStyles[$size!]};
+  ${({ theme, $variant }) => styleVariant({ theme, variant: $variant })}
 
-  ${({ $selectable, theme, $color, $selected }) =>
-    $selectable &&
-    css`
-      cursor: pointer;
-      transition: all 0.15s ease;
+  ${({ $selectable, theme, $variant, $selected }) => {
+    const { intent } = parseVariant($variant ?? "primary-solid");
+    const palette = getIntentPalette(theme, intent);
 
-      ${$selected &&
+    return (
+      $selectable &&
       css`
-        background: ${theme.colors[$color][500]};
-        color: white;
-      `}
+        cursor: pointer;
+        transition: all 0.15s ease;
 
-      &:hover {
-        opacity: 0.85;
-      }
-    `}
+        ${$selected &&
+        css`
+          background: ${palette[900]};
+          color: white;
+        `}
+
+        &:hover {
+          opacity: 0.85;
+        }
+      `
+    );
+  }}
 `;
 
 export const RemoveButton = styled.button`

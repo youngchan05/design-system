@@ -14,4 +14,5 @@ export interface InputProps
 
   required?: boolean;
   clearable?: boolean;
+  isControlled?: boolean;
 }

@@ -3,8 +3,7 @@ import type { TagProps } from "./Tag.types";
 
 export const Tag = ({
   children,
-  variant = "soft",
-  color = "gray",
+  variant = "primary-solid",
   size = "md",
   rounded = true,
   icon,
@@ -22,7 +21,6 @@ export const Tag = ({
   return (
     <TagWrapper
       $variant={variant}
-      $color={color}
       $size={size}
       $rounded={rounded}
       $selectable={!!selectable}

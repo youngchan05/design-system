@@ -1,5 +1,5 @@
+import type { Intent } from "@components/types";
 import styled, { css, keyframes } from "styled-components";
-import type { BadgeColor } from "../Badge/Badge.types";
 
 const slide = keyframes`
   0% { left: -40%; width: 40%; }
@@ -39,7 +39,7 @@ export const Track = styled.div<{
 
 export const Bar = styled.div<{
   $percent: number;
-  $color: BadgeColor;
+  $color: Intent;
   $variant: string;
   $indeterminate: boolean;
   $rounded: boolean;
