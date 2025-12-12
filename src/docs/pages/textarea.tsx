@@ -3,8 +3,10 @@ import { Preview } from "../components/Preview";
 import { PropsTable } from "../components/PropsTable";
 import { Textarea } from "@components/atoms";
 import { Heading, SectionTitle, SubTitle } from "../components/DocsStyle";
+import { useState } from "react";
 
 export default function TextareaPage() {
+  const [value, setValue] = useState("");
   return (
     <DocsLayout>
       <Heading>Textarea</Heading>
@@ -38,6 +40,20 @@ export default function TextareaPage() {
       <SectionTitle>Disabled</SectionTitle>
       <Preview>
         <Textarea placeholder="Not editable" disabled />
+      </Preview>
+
+      {/* Clearable */}
+      <SectionTitle>Controlled</SectionTitle>
+      <Preview>
+        <Textarea
+          label="Controlled"
+          value={value}
+          placeholder="Type something..."
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+            setValue(e.target.value)
+          }
+        />
+        Textarea value : {value}
       </Preview>
 
       {/* Full Width */}

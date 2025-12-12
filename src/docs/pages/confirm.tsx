@@ -1,41 +1,11 @@
-import styled from "styled-components";
 import { useState } from "react";
 import { DocsLayout } from "../components/DocsLayout";
 import { Preview } from "../components/Preview";
 import { PropsTable } from "../components/PropsTable";
 
 import { alert, confirm } from "../../components/molecules/Confirm/confirm";
-
-const Heading = styled.h1`
-  font-size: 28px;
-  margin-bottom: 8px;
-`;
-
-const Sub = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.gray[500]};
-  margin-bottom: 24px;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 18px;
-  margin-top: 32px;
-  margin-bottom: 8px;
-`;
-
-const Button = styled.button`
-  padding: 8px 14px;
-  background: ${({ theme }) => theme.colors.primary[600]};
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.primary[700]};
-  }
-`;
+import { Heading, SectionTitle, SubTitle } from "../components/DocsStyle";
+import { Button } from "@components/atoms";
 
 export default function ConfirmPage() {
   const [lastResult, setLastResult] = useState<string>("");
@@ -72,12 +42,12 @@ export default function ConfirmPage() {
   return (
     <DocsLayout>
       <Heading>Confirm & Alert</Heading>
-      <Sub>
+      <SubTitle>
         사용자에게 결정을 요청하거나 간단한 메시지를 보여줄 때 사용하는 전역
         Dialog 컴포넌트입니다. <br />
         <code>alert()</code> 와 <code>confirm()</code> 형태로 어느 곳에서나
         호출할 수 있으며 Promise 기반으로 결과를 반환합니다.
-      </Sub>
+      </SubTitle>
 
       {/* Alert */}
       <SectionTitle>Alert</SectionTitle>

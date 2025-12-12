@@ -100,7 +100,6 @@ const visualStyleMap = ({
         padding: 0;
         height: auto;
         font-size: inherit;
-
         &:hover {
           text-decoration: underline;
         }

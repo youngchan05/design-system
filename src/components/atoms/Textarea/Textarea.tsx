@@ -1,9 +1,9 @@
-import { useId, useState } from "react";
 import { Wrapper, StyledTextarea, TextareaContainer } from "./Textarea.styles";
 import type { TextareaProps } from "./Textarea.types";
 import { Text } from "../Text/Text.styles";
 import { IconButton } from "../Input/Input.styles";
 import { FiX } from "react-icons/fi";
+import useTextarea from "./useTextarea";
 
 export const Textarea = ({
   label,
@@ -14,28 +14,15 @@ export const Textarea = ({
   id,
   clearable = true,
   required,
+  value,
   ...props
 }: TextareaProps) => {
-  const [value, setValue] = useState(props.value ?? "");
-
-  const generatedId = useId();
-  const textareaId = id ?? generatedId;
-
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setValue(e.target.value);
-    props.onChange?.(e); // 기존 onChange 호출 유지
-  };
-
-  const clearInput = () => {
-    const event = {
-      target: { value: "" },
-    } as React.ChangeEvent<HTMLTextAreaElement>;
-
-    setValue("");
-    props.onChange?.(event);
-  };
-
-  console.log(value, "value");
+  const { textareaId, clearInput, handleChange, selectedValue, textareaRef } =
+    useTextarea({
+      onChange: props.onChange,
+      value,
+      id,
+    });
 
   return (
     <Wrapper $fullWidth={fullWidth}>
@@ -46,13 +33,14 @@ export const Textarea = ({
       )}
       <TextareaContainer $error={error} $disabled={props.disabled} $size={size}>
         <StyledTextarea
+          ref={textareaRef}
           id={textareaId}
-          value={value}
+          value={selectedValue}
           onChange={handleChange}
           {...props}
         />
         {/* clear button */}
-        {clearable && value && (
+        {clearable && selectedValue && (
           <IconButton type="button" onClick={clearInput}>
             <FiX size={16} />
           </IconButton>

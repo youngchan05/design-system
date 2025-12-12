@@ -1,49 +1,19 @@
-import styled from "styled-components";
+import { Button } from "@components/atoms";
 import { DocsLayout } from "../components/DocsLayout";
+import { Heading, SectionTitle, SubTitle } from "../components/DocsStyle";
 import { Preview } from "../components/Preview";
 import { PropsTable } from "../components/PropsTable";
 import { toast } from "@components/molecules/Toast/toast";
-
-const Heading = styled.h1`
-  font-size: 28px;
-  margin-bottom: 8px;
-`;
-
-const Sub = styled.p`
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.gray[500]};
-  margin-bottom: 24px;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 18px;
-  margin-top: 32px;
-  margin-bottom: 8px;
-`;
-
-const Button = styled.button`
-  padding: 8px 14px;
-  background: ${({ theme }) => theme.colors.primary[600]};
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.primary[700]};
-  }
-`;
 
 export default function ToastPage() {
   return (
     <DocsLayout>
       <Heading>Toast</Heading>
-      <Sub>
+      <SubTitle>
         화면 상단 또는 하단에 잠시 나타나는 알림 메시지입니다. 성공, 오류, 경고,
         정보 등 다양한 variant를 제공하며, 전역 API <code>toast.*</code> 로
         어디서든 호출 가능합니다.
-      </Sub>
+      </SubTitle>
 
       {/* Basic */}
       <SectionTitle>Basic</SectionTitle>
@@ -56,12 +26,27 @@ export default function ToastPage() {
       {/* Variants */}
       <SectionTitle>Variants</SectionTitle>
       <Preview>
-        <Button onClick={() => toast.success("Success message!")}>
+        <Button
+          variant="success-solid"
+          onClick={() => toast.success("Success message!")}
+        >
           Success
         </Button>
-        <Button onClick={() => toast.error("Error occurred!")}>Error</Button>
-        <Button onClick={() => toast.warning("Warning alert!")}>Warning</Button>
-        <Button onClick={() => toast.info("Some info")}>Info</Button>
+        <Button
+          variant="danger-solid"
+          onClick={() => toast.error("Error occurred!")}
+        >
+          Error
+        </Button>
+        <Button
+          variant="warning-solid"
+          onClick={() => toast.warning("Warning alert!")}
+        >
+          Warning
+        </Button>
+        <Button variant="info-solid" onClick={() => toast.info("Some info")}>
+          Info
+        </Button>
       </Preview>
 
       {/* Custom options */}

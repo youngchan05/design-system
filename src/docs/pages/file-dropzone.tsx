@@ -26,10 +26,10 @@ const SectionTitle = styled.h2`
 export default function FileDropzonePage() {
   const [files1, setFiles1] = useState<FileList | null>(null);
   const [filesMulti, setFilesMulti] = useState<FileList | null>(null);
-  const [imageFiles, setImageFiles] = useState<FileList | null>(null);
+  const [, setImageFiles] = useState<FileList | null>(null);
   const [previewFiles, setPreviewFiles] = useState<FileList | null>(null);
 
-  console.log(imageFiles, "imageFiles");
+  console.log(previewFiles, "previewFiles");
 
   return (
     <DocsLayout>
@@ -99,7 +99,9 @@ export default function FileDropzonePage() {
         {previewFiles && (
           <FileThumbnailList
             files={Array.from(previewFiles)}
-            onRemove={() => {}}
+            onRemove={(files) => {
+              setPreviewFiles(files);
+            }}
           />
         )}
       </Preview>

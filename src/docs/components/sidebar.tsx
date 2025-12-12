@@ -79,6 +79,7 @@ export const Sidebar = () => {
       <NavItem to="/docs/confirm">confirm</NavItem>
       <NavItem to="/docs/fileUpload">fileUpload</NavItem>
       <NavItem to="/docs/fileDropzone">FileDropzone</NavItem>
+      <NavItem to="/docs/empty">Empty</NavItem>
     </Wrapper>
   );
 };

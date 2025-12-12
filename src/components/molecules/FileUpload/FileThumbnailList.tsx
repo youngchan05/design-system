@@ -38,8 +38,19 @@ export const FileThumbnailList = ({
   onRemove,
 }: {
   files: File[];
-  onRemove: (index: number) => void;
+  onRemove: (files: FileList) => void;
 }) => {
+  const removeFile = (idx: number) => {
+    if (!files) return;
+    const dt = new DataTransfer();
+
+    Array.from(files).forEach((f, i) => {
+      if (idx !== i) dt.items.add(f);
+    });
+
+    onRemove?.(dt.files);
+  };
+
   return (
     <Grid>
       {files.map((file, idx) => {
@@ -47,7 +58,7 @@ export const FileThumbnailList = ({
         return (
           <Thumb key={idx}>
             <img src={url} />
-            <Remove onClick={() => onRemove(idx)}>×</Remove>
+            <Remove onClick={() => removeFile(idx)}>×</Remove>
           </Thumb>
         );
       })}

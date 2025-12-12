@@ -22,6 +22,7 @@ import FileDropzonePage from "./docs/pages/file-dropzone";
 import Test from "./docs/pages/test";
 import ColorsPage from "./docs/pages/color";
 import DatePickerPage from "./docs/pages/datePicker";
+import EmptyPage from "./docs/pages/empty";
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
       <Route path="/docs/fileUpload" element={<FileUploadPage />} />
       <Route path="/docs/fileDropzone" element={<FileDropzonePage />} />
       <Route path="/docs/datepicker" element={<DatePickerPage />} />
+      <Route path="/docs/empty" element={<EmptyPage />} />
+
       <Route path="/test" element={<Test />} />
     </Routes>
   );

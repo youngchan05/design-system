@@ -17,10 +17,10 @@ export default function ButtonPage() {
         <Button variant="success-solid">success</Button>
         <Button variant="warning-solid">warning</Button>
         <Button variant="danger-solid">danger</Button>
-        <Button variant="primary-outline">Outline</Button>
-        <Button variant="primary-ghost">Ghost</Button>
-        <Button variant="primary-soft">Ghost</Button>
-        <Button variant="primary-link">Ghost</Button>
+        <Button variant="primary-outline">outline</Button>
+        <Button variant="primary-ghost">ghost</Button>
+        <Button variant="primary-soft">soft</Button>
+        <Button variant="primary-link">link</Button>
 
         {/* Icon-only */}
         <Button leftIcon={<FiPlus />} aria-label="Add" />
