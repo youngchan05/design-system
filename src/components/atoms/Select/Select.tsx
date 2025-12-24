@@ -37,10 +37,10 @@ export const Select = ({
         <Input
           label={label}
           readOnly
+          onClick={toggleOpen}
           disabled={disabled}
           error={error}
           size={size}
-          onClick={toggleOpen}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
           clearable={false}

@@ -1,6 +1,6 @@
+import type { Intent } from "@components/types";
 import type { ReactNode } from "react";
 
-export type ToastVariant = "default" | "success" | "error" | "warning" | "info";
 
 export type ToastPosition =
   | "top-left"
@@ -13,7 +13,7 @@ export type ToastPosition =
 export interface ToastOptions {
   id?: string;
   message: string | ReactNode;
-  variant?: ToastVariant;
+  variant?: Intent;
   duration?: number; // ms
 }
 

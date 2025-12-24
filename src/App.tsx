@@ -18,10 +18,11 @@ import PaginationPage from "./docs/pages/pagination";
 import ConfirmPage from "./docs/pages/confirm";
 import HomePage from "./docs/pages/home";
 import FileUploadPage from "./docs/pages/file-upload";
-import Test from "./docs/pages/test";
 import ColorsPage from "./docs/pages/color";
 import DatePickerPage from "./docs/pages/datePicker";
 import EmptyPage from "./docs/pages/empty";
+import TablePage from "./docs/pages/Table";
+import Test from "./docs/pages/test";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
       <Route path="/docs/datepicker" element={<DatePickerPage />} />
       <Route path="/docs/empty" element={<EmptyPage />} />
 
+      <Route path="/table" element={<TablePage />} />
       <Route path="/test" element={<Test />} />
     </Routes>
   );

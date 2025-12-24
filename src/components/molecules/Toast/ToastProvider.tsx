@@ -19,7 +19,7 @@ export const ToastProvider = ({
     const item: ToastItem = {
       id,
       message: opts.message,
-      variant: opts.variant || "default",
+      variant: opts.variant,
       duration: opts.duration || 3000,
     };
 

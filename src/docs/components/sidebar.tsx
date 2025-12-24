@@ -66,7 +66,6 @@ export const Sidebar = () => {
       <NavItem to="/docs/switch">switch</NavItem>
       <NavItem to="/docs/select">select</NavItem>
       <NavItem to="/docs/datepicker">datepicker</NavItem>
-      {/* <NavItem to="/docs/badge">badge</NavItem> */}
       <NavItem to="/docs/avatar">avatar</NavItem>
       <NavItem to="/docs/tag">tag</NavItem>
       <NavItem to="/docs/tooltip">tooltip</NavItem>
@@ -78,7 +77,7 @@ export const Sidebar = () => {
       <NavItem to="/docs/pagination">pagination</NavItem>
       <NavItem to="/docs/confirm">confirm</NavItem>
       <NavItem to="/docs/fileUpload">fileUpload</NavItem>
-      <NavItem to="/docs/empty">Empty</NavItem>
+      <NavItem to="/docs/empty">empty</NavItem>
     </Wrapper>
   );
 };

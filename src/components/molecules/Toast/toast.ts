@@ -14,7 +14,7 @@ export const setExternalToastHandlers = (
 export const toast = {
   show: (opts: ToastOptions) => externalAdd?.(opts),
   success: (msg: string) => externalAdd?.({ message: msg, variant: "success" }),
-  error: (msg: string) => externalAdd?.({ message: msg, variant: "error" }),
+  error: (msg: string) => externalAdd?.({ message: msg, variant: "danger" }),
   warning: (msg: string) => externalAdd?.({ message: msg, variant: "warning" }),
   info: (msg: string) => externalAdd?.({ message: msg, variant: "info" }),
 

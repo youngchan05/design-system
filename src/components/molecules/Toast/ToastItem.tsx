@@ -22,11 +22,7 @@ export const ToastItemComponent = ({ item, onRemove }: Props) => {
   }, [item, onRemove]);
 
   return (
-    <ToastBox
-      $variant={item.variant || "default"}
-      $leave={leaving}
-      role="alert"
-    >
+    <ToastBox $variant={item.variant} $leave={leaving} role="alert">
       {item.message}
     </ToastBox>
   );

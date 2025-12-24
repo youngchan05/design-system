@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
-import type { ToastPosition, ToastVariant } from "./Toast.types";
+import type { ToastOptions, ToastPosition } from "./Toast.types";
+import { getIntentPalette } from "@components/utils.style";
 
 const fadeSlideIn = keyframes`
   0% { opacity: 0; transform: translateY(8px); }
@@ -37,7 +38,7 @@ export const ToastWrapper = styled.div<{
 `;
 
 export const ToastBox = styled.div<{
-  $variant: ToastVariant;
+  $variant: ToastOptions["variant"];
   $leave: boolean;
 }>`
   pointer-events: auto;
@@ -49,19 +50,21 @@ export const ToastBox = styled.div<{
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 
   background: ${({ theme, $variant }) => {
-    switch ($variant) {
-      case "success":
-        return theme.colors.success[600];
-      case "error":
-        return theme.colors.danger[600];
-      case "warning":
-        return theme.colors.warning[600];
-      case "info":
-        return theme.colors.primary[600];
-      case "default":
-      default:
-        return theme.colors.gray[700];
-    }
+    return $variant
+      ? getIntentPalette(theme, $variant)[600]
+      : theme.colors.gray[700];
+    // switch ($variant) {
+    //   case "success":
+    //     return theme.colors.success[600];
+    //   case "danger":
+    //     return theme.colors.danger[600];
+    //   case "warning":
+    //     return theme.colors.warning[600];
+    //   case "info":
+    //     return theme.colors.primary[600];
+    //   default:
+    //     return theme.colors.gray[700];
+    // }
   }};
 
   animation: ${({ $leave }) =>

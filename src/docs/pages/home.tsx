@@ -136,12 +136,6 @@ export default function HomePage() {
             <h3>Confirm / Alert</h3>
             <p>사용자 확인을 받는 대화 상자</p>
           </Card>
-
-          <Card to="/docs/badge">
-            <h3>Badge</h3>
-            <p>숫자 / 상태 표시 요소</p>
-          </Card>
-
           <Card to="/docs/avatar">
             <h3>Avatar</h3>
             <p>이미지 / 사용자 대표 아이콘</p>
@@ -155,6 +149,14 @@ export default function HomePage() {
           <Card to="/docs/pagination">
             <h3>Pagination</h3>
             <p>페이지 이동 네비게이션</p>
+          </Card>
+          <Card to="/docs/fileUpload">
+            <h3>FileUpload</h3>
+            <p>파일 업로드</p>
+          </Card>
+          <Card to="/docs/empty">
+            <h3>Empty</h3>
+            <p>상태를 사용자에게 안내 UI</p>
           </Card>
         </Cards>
       </Section>

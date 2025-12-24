@@ -48,7 +48,6 @@ export const Preview = ({
   );
 };
 
-// 🔥 추가: Code 전용 컴포넌트
 Preview.Code = function PreviewCode({ children }: { children: string }) {
   return (
     <CodeBox>

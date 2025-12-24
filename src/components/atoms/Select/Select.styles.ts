@@ -14,6 +14,11 @@ export const Trigger = styled.button<{
   $open?: boolean;
 }>`
   position: relative;
+  cursor: pointer;
+  input {
+    height: 100%;
+    cursor: inherit;
+  }
 `;
 
 export const Arrow = styled.span<{ $open?: boolean }>`
@@ -57,7 +62,6 @@ export const Menu = styled.ul<{ $open?: boolean }>`
     }
   }
 `;
-
 export const Option = styled.li<{
   $highlight?: boolean;
   $disabled?: boolean;

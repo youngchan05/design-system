@@ -412,8 +412,8 @@ const GridCanvas = ({
 
 // ------------------ MAIN -------------------
 const Test = () => {
-  const [cols] = useState(8);
-  const [rows] = useState(6);
+  const [cols] = useState(20);
+  const [rows] = useState(20);
   const [items, setItems] = useState<GridItemType[]>([
     { id: "1", label: "Item 1", row: 1, col: 1, rowSpan: 2, colSpan: 3 },
     { id: "2", label: "Item 2", row: 1, col: 4, rowSpan: 3, colSpan: 2 },

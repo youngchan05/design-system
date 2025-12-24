@@ -23,7 +23,6 @@ export const ConfirmProvider = ({
   // 호출되는 즉시 state를 닫아주는 래퍼 함수 만들기
   const closeAndResolve = (value?: boolean) => {
     setState((prev) => ({ ...prev, open: false }));
-    console.log(value, "valuevalue");
     resolveDialog(value);
   };
 
